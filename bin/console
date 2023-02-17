@@ -1,0 +1,31 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Finder\Finder;
+
+$finder = new Finder();
+$finder = $finder->files()->in(__DIR__ . '/../commands')->name('*.php');
+$namespaces = [];
+
+function _get_full_namespace($path): string
+{
+    $filename = basename($path, '.php');
+    $lines = file($path);
+    $array = preg_grep('/^namespace /', $lines);
+    $namespaceLine = array_shift($array);
+    $match = array();
+    preg_match('/^namespace (.*);$/', $namespaceLine, $match);
+    return array_pop($match) . '\\' . $filename;
+}
+
+foreach ($finder as $file) {
+    $namespaces[] = _get_full_namespace($file->getRealPath());
+}
+
+$app = new Application();
+foreach ($namespaces as $namespace) {
+    $app->add(new $namespace());
+}
+$app->run();
