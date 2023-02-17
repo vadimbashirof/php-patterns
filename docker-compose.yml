@@ -13,9 +13,3 @@ services:
       - './:/var/www'
       - './docker/php-fpm/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini'
       - './docker/php-fpm/php.ini:/usr/local/etc/php/php.ini'
-    networks:
-      - laravel
-
-networks:
-  laravel:
-    driver: bridge
