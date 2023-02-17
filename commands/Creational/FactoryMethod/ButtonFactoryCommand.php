@@ -13,7 +13,7 @@ class ButtonFactoryCommand extends Command
 {
     protected function configure()
     {
-        $this->setName('FactoryMethod:button');
+        $this->setName('ButtonFactoryCommand');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)

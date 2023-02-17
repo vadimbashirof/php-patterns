@@ -14,7 +14,7 @@ class ProductFactoryCommand extends Command
 {
     protected function configure()
     {
-        $this->setName('FactoryMethod:product');
+        $this->setName('ProductFactoryCommand');
     }
 
     private function clientCode(Creator $creator)

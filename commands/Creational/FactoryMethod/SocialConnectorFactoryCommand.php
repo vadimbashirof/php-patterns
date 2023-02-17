@@ -14,7 +14,7 @@ class SocialConnectorFactoryCommand extends Command
 {
     protected function configure()
     {
-        $this->setName('FactoryMethod:social');
+        $this->setName('SocialConnectorFactoryCommand');
     }
 
     /**

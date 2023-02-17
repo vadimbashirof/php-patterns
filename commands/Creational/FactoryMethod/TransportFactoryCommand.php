@@ -13,7 +13,7 @@ class TransportFactoryCommand extends Command
 {
     protected function configure()
     {
-        $this->setName('FactoryMethod:transport');
+        $this->setName('TransportFactoryCommand');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)

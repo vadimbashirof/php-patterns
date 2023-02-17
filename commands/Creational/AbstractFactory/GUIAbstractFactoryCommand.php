@@ -14,7 +14,7 @@ class GUIAbstractFactoryCommand extends Command
 {
     protected function configure()
     {
-        $this->setName('AbstractFactory:GUI');
+        $this->setName('GUIAbstractFactoryCommand');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)

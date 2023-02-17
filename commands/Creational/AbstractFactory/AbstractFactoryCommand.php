@@ -14,7 +14,7 @@ class AbstractFactoryCommand extends Command
 {
     protected function configure()
     {
-        $this->setName('AbstractFactory:abstract');
+        $this->setName('AbstractFactoryCommand');
     }
 
     /**
