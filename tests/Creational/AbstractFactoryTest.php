@@ -12,6 +12,10 @@ use Patterns\Creational\AbstractFactory\GUIAbstractFactory\MacFactory;
 use Patterns\Creational\AbstractFactory\GUIAbstractFactory\WinButton;
 use Patterns\Creational\AbstractFactory\GUIAbstractFactory\WinCheckbox;
 use Patterns\Creational\AbstractFactory\GUIAbstractFactory\WinFactory;
+use Patterns\Creational\AbstractFactory\TemplateFactory\PHPTemplateFactory;
+use Patterns\Creational\AbstractFactory\TemplateFactory\PHPTemplatePageTemplate;
+use Patterns\Creational\AbstractFactory\TemplateFactory\PHPTemplateRenderer;
+use Patterns\Creational\AbstractFactory\TemplateFactory\PHPTemplateTitleTemplate;
 use PHPUnit\Framework\TestCase;
 
 class AbstractFactoryTest extends TestCase
@@ -38,5 +42,14 @@ class AbstractFactoryTest extends TestCase
 
         $this->assertInstanceOf(ConcreteProductA2::class, $concreteFactory2->createProductA());
         $this->assertInstanceOf(ConcreteProductB2::class, $concreteFactory2->createProductB());
+    }
+
+    public function testTemplateFactory()
+    {
+        $phpTemplateFactory = new PHPTemplateFactory();
+
+        $this->assertInstanceOf(PHPTemplateTitleTemplate::class, $phpTemplateFactory->createTitleTemplate());
+        $this->assertInstanceOf(PHPTemplatePageTemplate::class, $phpTemplateFactory->createPageTemplate());
+        $this->assertInstanceOf(PHPTemplateRenderer::class, $phpTemplateFactory->getRenderer());
     }
 }
