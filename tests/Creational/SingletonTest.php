@@ -18,7 +18,6 @@ class SingletonTest extends TestCase
         $this->assertSame($s1, $s2);
     }
 
-
     public function testRealSingleton()
     {
         $l1 = Logger::getInstance();
