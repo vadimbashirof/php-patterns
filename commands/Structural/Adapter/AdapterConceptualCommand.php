@@ -2,7 +2,6 @@
 
 namespace Commands\Structural\Adapter;
 
-
 use Patterns\Structural\Adapter\Conceptual\Adaptee;
 use Patterns\Structural\Adapter\Conceptual\Adapter;
 use Patterns\Structural\Adapter\Conceptual\Target;
