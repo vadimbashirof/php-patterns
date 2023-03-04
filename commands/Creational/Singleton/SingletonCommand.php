@@ -18,7 +18,7 @@ class SingletonCommand extends Command
     /**
      * Клиентский код.
      */
-    public function clientCode()
+    private function clientCode()
     {
         $s1 = Singleton::getInstance();
         $s2 = Singleton::getInstance();

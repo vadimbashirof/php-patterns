@@ -21,7 +21,7 @@ class NotificationAdapterCommand extends Command
     /**
      * Клиентский код работает с классами, которые следуют Целевому интерфейсу.
      */
-    public function clientCode(Notification $notification)
+    private function clientCode(Notification $notification)
     {
         // ...
 

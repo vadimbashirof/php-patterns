@@ -20,7 +20,7 @@ class RealSingletonCommand extends Command
     /**
      * Клиентский код.
      */
-    public function clientCode()
+    private function clientCode()
     {
         Logger::log("Started!");
 

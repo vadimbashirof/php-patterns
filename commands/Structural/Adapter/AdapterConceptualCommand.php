@@ -20,7 +20,7 @@ class AdapterConceptualCommand extends Command
     /**
      * Клиентский код.
      */
-    public function clientCode(Target $target)
+    private function clientCode(Target $target)
     {
         echo $target->request();
     }
